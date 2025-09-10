@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: '{"model": "claude-3-5-sonnet", "messages": [{"role": "user", "content":
+      "Use the tool to sum 1 and 2"}], "stream": true, "max_tokens": 1024, "temperature":
+      0.0, "top_p": 1.0, "tools": [{"tool_spec": {"type": "generic", "name": "plus",
+      "description": "Sum two numbers.", "input_schema": {"properties": {"a": {"title":
+      "A", "type": "integer"}, "b": {"title": "B", "type": "integer"}}, "required":
+      ["a", "b"], "type": "object"}}}]}'
+    headers:
+      accept:
+      - text/event-stream
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '428'
+      content-type:
+      - application/json
+      host:
+      - vmvcpli-au86210.snowflakecomputing.com
+      user-agent:
+      - python-httpx/0.27.2
+    method: POST
+    uri: https://vmvcpli-au86210.snowflakecomputing.com/api/v2/cortex/inference:complete
+  response:
+    body:
+      string: 'data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"I","content_list":[{"type":"text","text":"I"}],"text":"I"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"''ll","content_list":[{"type":"text","text":"''ll"}],"text":"''ll"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"
+        help","content_list":[{"type":"text","text":" help"}],"text":" help"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"
+        you sum","content_list":[{"type":"text","text":" you sum"}],"text":" you sum"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"
+        the","content_list":[{"type":"text","text":" the"}],"text":" the"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"
+        numbers 1 ","content_list":[{"type":"text","text":" numbers 1 "}],"text":"
+        numbers 1 "}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"and
+        2 ","content_list":[{"type":"text","text":"and 2 "}],"text":"and 2 "}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"using
+        the `","content_list":[{"type":"text","text":"using the `"}],"text":"using
+        the `"}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"plus`
+        function.","content_list":[{"type":"text","text":"plus` function."}],"text":"plus`
+        function."}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","tool_use_id":"tooluse_iaeSTf26QMC7Uhdu9P3juQ","name":"plus","content_list":[{"tool_use_id":"tooluse_iaeSTf26QMC7Uhdu9P3juQ","name":"plus"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","input":"{\"a\":
+        1","content_list":[{"input":"{\"a\": 1"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","input":",
+        \"b\": 2}","content_list":[{"input":", \"b\": 2}"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content_list":[{"type":"text","text":""}],"text":""}}],"usage":{"prompt_tokens":405,"completion_tokens":90,"total_tokens":495}}
+
+
+        '
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/event-stream
+      Date:
+      - Wed, 10 Sep 2025 10:40:15 GMT,Wed, 10 Sep 2025 10:40:16 GMT
+      Expect-Ct:
+      - enforce, max-age=3600
+      Server:
+      - SF-LB
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Accel-Buffering:
+      - 'no'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Attempt-Count:
+      - '1'
+      X-Envoy-Upstream-Service-Time:
+      - '966'
+      X-Frame-Options:
+      - deny
+      X-Snowflake-Fe-Config:
+      - v20250826.1.0-4cca9be3.1756259364.awsuseast2.1757500775302
+      X-Snowflake-Fe-Instance:
+      - envoy-ingress-awsuseast2-v27ff
+      X-Snowflake-Request-Id:
+      - e2c3af22-fb4e-4a2e-89dc-3a7d150bd2d4
+      X-Xss-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

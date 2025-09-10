@@ -70,6 +70,7 @@ def pytest_collection_modifyitems(
 ) -> None:
     llm_markers = [
         "anthropic",
+        "cortex",
         "litellm_anthropic",
         "litellm_ollama",
         "litellm_openai",

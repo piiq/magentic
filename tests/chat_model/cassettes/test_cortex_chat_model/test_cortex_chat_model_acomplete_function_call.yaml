@@ -1,0 +1,102 @@
+interactions:
+- request:
+    body: '{"model": "claude-3-5-sonnet", "messages": [{"role": "user", "content":
+      "Use the tool to sum 1 and 2"}], "stream": true, "max_tokens": 1024, "temperature":
+      0.0, "top_p": 1.0, "tools": [{"tool_spec": {"type": "generic", "name": "plus",
+      "description": "Sum two numbers.", "input_schema": {"properties": {"a": {"title":
+      "A", "type": "integer"}, "b": {"title": "B", "type": "integer"}}, "required":
+      ["a", "b"], "type": "object"}}}]}'
+    headers:
+      accept:
+      - text/event-stream
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '428'
+      content-type:
+      - application/json
+      host:
+      - vmvcpli-au86210.snowflakecomputing.com
+      user-agent:
+      - python-httpx/0.27.2
+    method: POST
+    uri: https://vmvcpli-au86210.snowflakecomputing.com/api/v2/cortex/inference:complete
+  response:
+    body:
+      string: 'data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"I","content_list":[{"type":"text","text":"I"}],"text":"I"}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"''ll
+        help you sum the numbers 1 ","content_list":[{"type":"text","text":"''ll help
+        you sum the numbers 1 "}],"text":"''ll help you sum the numbers 1 "}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"and
+        2 using the `","content_list":[{"type":"text","text":"and 2 using the `"}],"text":"and
+        2 using the `"}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"plus`
+        function.","content_list":[{"type":"text","text":"plus` function."}],"text":"plus`
+        function."}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","tool_use_id":"tooluse_RNFr5vVVSTi7_N93An6jTg","name":"plus","content_list":[{"tool_use_id":"tooluse_RNFr5vVVSTi7_N93An6jTg","name":"plus"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","input":"{\"a\":
+        1","content_list":[{"input":"{\"a\": 1"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","input":",
+        \"b\": ","content_list":[{"input":", \"b\": "}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"tool_use","input":"2}","content_list":[{"input":"2}"}],"text":""}}],"usage":{}}
+
+
+        data: {"id":"21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content_list":[{"type":"text","text":""}],"text":""}}],"usage":{"prompt_tokens":405,"completion_tokens":90,"total_tokens":495}}
+
+
+        '
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/event-stream
+      Date:
+      - Wed, 10 Sep 2025 10:22:59 GMT,Wed, 10 Sep 2025 10:22:59 GMT
+      Expect-Ct:
+      - enforce, max-age=3600
+      Server:
+      - SF-LB
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Accel-Buffering:
+      - 'no'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Attempt-Count:
+      - '1'
+      X-Envoy-Upstream-Service-Time:
+      - '570'
+      X-Frame-Options:
+      - deny
+      X-Snowflake-Fe-Config:
+      - v20250826.1.0-4cca9be3.1756259364.awsuseast2.1757499686068
+      X-Snowflake-Fe-Instance:
+      - '-'
+      X-Snowflake-Request-Id:
+      - 21d9d40c-0e9a-41d2-ab0e-1a3ea46c59db
+      X-Xss-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

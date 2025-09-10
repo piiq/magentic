@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: '{"model": "claude-3-5-sonnet", "messages": [{"role": "user", "content":
+      "Say hello!"}], "stream": true, "max_tokens": 1024, "temperature": 0.0, "top_p":
+      1.0}'
+    headers:
+      accept:
+      - text/event-stream
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '157'
+      content-type:
+      - application/json
+      host:
+      - vmvcpli-au86210.snowflakecomputing.com
+      user-agent:
+      - python-httpx/0.27.2
+    method: POST
+    uri: https://vmvcpli-au86210.snowflakecomputing.com/api/v2/cortex/inference:complete
+  response:
+    body:
+      string: 'data: {"id":"b845370e-6796-43b7-bcb6-cf210ddb3426","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"Hello!
+        How","content_list":[{"type":"text","text":"Hello! How"}],"text":"Hello! How"}}],"usage":{}}
+
+
+        data: {"id":"b845370e-6796-43b7-bcb6-cf210ddb3426","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"
+        are you today","content_list":[{"type":"text","text":" are you today"}],"text":"
+        are you today"}}],"usage":{}}
+
+
+        data: {"id":"b845370e-6796-43b7-bcb6-cf210ddb3426","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content":"?","content_list":[{"type":"text","text":"?"}],"text":"?"}}],"usage":{}}
+
+
+        data: {"id":"b845370e-6796-43b7-bcb6-cf210ddb3426","model":"claude-3-5-sonnet","choices":[{"delta":{"type":"text","content_list":[{"type":"text","text":""}],"text":""}}],"usage":{"prompt_tokens":10,"completion_tokens":10,"total_tokens":20}}
+
+
+        '
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/event-stream
+      Date:
+      - Wed, 10 Sep 2025 10:39:46 GMT,Wed, 10 Sep 2025 10:39:47 GMT
+      Expect-Ct:
+      - enforce, max-age=3600
+      Server:
+      - SF-LB
+      Strict-Transport-Security:
+      - max-age=31536000
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding, User-Agent
+      X-Accel-Buffering:
+      - 'no'
+      X-Content-Type-Options:
+      - nosniff
+      X-Envoy-Attempt-Count:
+      - '1'
+      X-Envoy-Upstream-Service-Time:
+      - '848'
+      X-Frame-Options:
+      - deny
+      X-Snowflake-Fe-Config:
+      - v20250826.1.0-4cca9be3.1756259364.awsuseast2.1757500678807
+      X-Snowflake-Fe-Instance:
+      - envoy-ingress-awsuseast2-lvd2k
+      X-Snowflake-Request-Id:
+      - b845370e-6796-43b7-bcb6-cf210ddb3426
+      X-Xss-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

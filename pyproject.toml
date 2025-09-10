@@ -86,6 +86,7 @@ filterwarnings = [
 ]
 markers = [
     "anthropic: Tests that query the Anthropic API. Requires the ANTHROPIC_API_KEY environment variable to be set.",
+    "cortex: Tests that query the Snowflake Cortex API. Requires SNOWFLAKE_ACCOUNT and SNOWFLAKE_TOKEN environment variables to be set.",
     "litellm_anthropic: Tests that query the Anthropic API via litellm. Requires the ANTHROPIC_API_KEY environment variable to be set.",
     "litellm_ollama: Tests that query Ollama via litellm. Requires ollama to be installed and running on localhost:11434.",
     "litellm_openai: Tests that query the OpenAI API via litellm. Requires the OPENAI_API_KEY environment variable to be set.",
