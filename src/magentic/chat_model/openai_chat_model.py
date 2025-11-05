@@ -296,19 +296,23 @@ class BaseFunctionToolSchema(Generic[BaseFunctionSchemaT]):
 
 class OpenaiStreamParser(StreamParser[ChatCompletionChunk]):
     def is_content(self, item: ChatCompletionChunk) -> bool:
-        return bool(item.choices and item.choices[0].delta.content)
+        return bool(
+            item.choices and item.choices[0].delta and item.choices[0].delta.content
+        )
 
     def get_content(self, item: ChatCompletionChunk) -> str | None:
-        if item.choices and item.choices[0].delta.content:
+        if self.is_content(item):
             return item.choices[0].delta.content
         return None
 
     def is_tool_call(self, item: ChatCompletionChunk) -> bool:
-        return bool(item.choices and item.choices[0].delta.tool_calls)
+        return bool(
+            item.choices and item.choices[0].delta and item.choices[0].delta.tool_calls
+        )
 
     def iter_tool_calls(self, item: ChatCompletionChunk) -> Iterator[FunctionCallChunk]:
-        if item.choices and item.choices[0].delta.tool_calls:
-            for tool_call in item.choices[0].delta.tool_calls:
+        if self.is_tool_call(item):
+            for tool_call in item.choices[0].delta.tool_calls or []:
                 if tool_call.function:
                     yield FunctionCallChunk(
                         id=tool_call.id,
@@ -339,7 +343,7 @@ class OpenaiStreamState(StreamState[ChatCompletionChunk]):
     def update(self, item: ChatCompletionChunk) -> None:
         # Add tool call index for Mistral tool calls to make compatible with OpenAI
         # TODO: Remove this fix when MistralChatModel switched to mistral python package
-        if item.choices:
+        if item.choices and item.choices[0].delta:
             for tool_call_chunk in item.choices[0].delta.tool_calls or []:
                 if (
                     tool_call_chunk.id is not None
